@@ -1,0 +1,14 @@
+{
+  "name": "copy-word",
+  "main": "./lib/copy-word",
+  "version": "0.0.0",
+  "description": "Copy/Cut the current word when no text is selected",
+  "activationEvents": ["copy-word:copy-word"],
+  "repository": "https://github.com/alefragnani/copy-word",
+  "license": "MIT",
+  "engines": {
+    "atom": ">0.50.0"
+  },
+  "dependencies": {
+  }
+}

@@ -1,0 +1,11 @@
+'.platform-darwin .pane.active > .item-views > .editor':
+  'cmd-c': 'copy-word:copy-word'
+  'cmd-x': 'copy-word:cut-word'
+
+'.platform-linux .pane.active > .item-views > .editor':
+  'ctrl-c': 'copy-word:copy-word'
+  'ctrl-x': 'copy-word:cut-word'
+
+'.platform-win32 .pane.active > .item-views > .editor':
+  'ctrl-c': 'copy-word:copy-word'
+  'ctrl-x': 'copy-word:cut-word'
