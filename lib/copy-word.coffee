@@ -1,12 +1,12 @@
 module.exports =
 
   activate: (state) ->
-    console.log "@activate"
+#    console.log "copy-word was toggled!"
     atom.workspaceView.command "copy-word:copy-word", => @copySelectedWord()
     atom.workspaceView.command "copy-word:cut-word", => @cutSelectedWord()
 
   selectWord: ->
-    console.log "@selectWord"
+#    console.log "@selectWord"
     @prevPos = null
     @editor = atom.workspace.getActiveEditor()
     cursors = @editor.getCursors()
@@ -22,7 +22,7 @@ module.exports =
     true
 
   copySelectedWord: ->
-    console.log "@copySelectedWord"
+#    console.log "@copySelectedWord"
     fullword = @selectWord()
     @editor.copySelectedText()
     if fullword
@@ -34,7 +34,7 @@ module.exports =
         cursor[0].setBufferPosition(cursor[1])
 
   cutSelectedWord: ->
-    console.log "@cutSelectedWord"
+#    console.log "@cutSelectedWord"
     fullword = @selectWord()
     @editor.cutSelectedText()
     if fullword
