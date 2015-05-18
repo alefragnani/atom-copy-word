@@ -1,9 +1,4 @@
 # See https://atom.io/docs/latest/creating-a-package#menus for more details
-'context-menu':
-  '.overlayer':
-      'Copy Word': 'copy-word:copy-word'
-      'Cut Word': 'copy-word:cut-word'
-
 'menu': [
   {
     'label': 'Packages'

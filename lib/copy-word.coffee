@@ -1,20 +1,32 @@
-module.exports =
+{CompositeDisposable} = require 'atom'
+
+module.exports = CopyWord =
+  subscriptions: null
 
   activate: (state) ->
-#    console.log "copy-word was toggled!"
-    atom.workspaceView.command "copy-word:copy-word", => @copySelectedWord()
-    atom.workspaceView.command "copy-word:cut-word", => @cutSelectedWord()
+    @subscriptions = new CompositeDisposable
+
+    @subscriptions.add atom.commands.add 'atom-workspace', 'copy-word:copy-word': => @copySelectedWord()
+    @subscriptions.add atom.commands.add 'atom-workspace', 'copy-word:cut-word': => @cutSelectedWord()
+
+  deactivate: ->
+    @subscriptions.dispose()
+
+
 
   selectWord: ->
-#    console.log "@selectWord"
+    # console.log "@selectWord"
     @prevPos = null
-    @editor = atom.workspace.getActiveEditor()
+    @editor = atom.workspace.getActiveTextEditor()
     cursors = @editor.getCursors()
     if @hasNoSelection()
       @prevPos = ([cursor, cursor.getBufferPosition()] for cursor in cursors)
-      @editor.selectWord()
+
+      # atom.workspace.getActiveTextEditor().selections[0].selectWord()
+      @editor.selections[0].selectWord()
+
       @editor.selections = @editor.getSelectionsOrderedByBufferPosition()
-      return true;
+      return true
 
   hasNoSelection: ->
     for selection in @editor.getSelections()
@@ -22,7 +34,7 @@ module.exports =
     true
 
   copySelectedWord: ->
-#    console.log "@copySelectedWord"
+    # console.log "@copySelectedWord"
     fullword = @selectWord()
     @editor.copySelectedText()
     if fullword
@@ -34,7 +46,7 @@ module.exports =
         cursor[0].setBufferPosition(cursor[1])
 
   cutSelectedWord: ->
-#    console.log "@cutSelectedWord"
+    # console.log "@cutSelectedWord"
     fullword = @selectWord()
     @editor.cutSelectedText()
     if fullword
