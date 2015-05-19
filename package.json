@@ -1,5 +1,5 @@
 {
-  "name": "copy-",
+  "name": "copy-word",
   "main": "./lib/copy-word",
   "version": "0.3.0",
   "description": "Copy/Cut the current word when no text is selected",
