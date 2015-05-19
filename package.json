@@ -1,7 +1,7 @@
 {
   "name": "copy-",
   "main": "./lib/copy-word",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Copy/Cut the current word when no text is selected",
   "activationCommands": {
     "atom-workspace": "copy-word:copy-word"
