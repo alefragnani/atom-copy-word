@@ -4,3 +4,7 @@ Replaces the default Copy/Cut commands, and uses the current word when no text i
 
 * `Ctrl-C`/`Cmd-C` - copy the current word
 * `Ctrl-X`/`Cmd-X` - cut the current word
+
+## License
+
+[MIT](LICENSE.md) &copy; Alessandro Fragnani
