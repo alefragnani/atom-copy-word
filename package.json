@@ -6,7 +6,7 @@
   "activationCommands": {
     "atom-workspace": "copy-word:copy-word"
   },
-  "repository": "https://github.com/alefragnani/copy-word",
+  "repository": "https://github.com/alefragnani/atom-copy-word",
   "license": "MIT",
   "engines": {
     "atom": ">0.50.0"
