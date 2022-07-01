@@ -1,5 +1,7 @@
 # Copy Word package for Atom
 
+> Following Atom archiving in December 15, 2022, this package will be archived as well. Learn more in their [official announcement](https://github.blog/2022-06-08-sunsetting-atom/)
+
 Replaces the default Copy/Cut commands, and uses the current word when no text is selected.
 
 * `Ctrl-C`/`Cmd-C` - copy the current word
